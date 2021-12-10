@@ -10,12 +10,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(
         textTheme: TextTheme(
-          body:TextStyle(
+          body1:TextStyle(
             fontSize: 12.0,
             color: Colors.black,
             fontWeight: FontWeight.bold,
             ),
-            display: TextStyle(fontSize: 12.0,color: Colors.black,fontWeight: FontWeight.bold,)
+            display1: TextStyle(fontSize: 12.0,color: Colors.black,fontWeight: FontWeight.bold,)
             ),
             ),
     );
