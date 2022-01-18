@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       useInheritedMediaQuery: true,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
@@ -34,30 +35,65 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Deshitha"),
-
-        leading: IconButton(
-          onPressed: (){}, 
-          icon: Icon(Icons.menu)
-          ),
-
-          actions: [ //widget array
-            IconButton(
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Deshitha"),
+    
+          leading: IconButton(
             onPressed: (){}, 
-            icon: Icon(Icons.search)
+            icon: Icon(Icons.menu)
             ),
-          
-            IconButton(
-            onPressed: (){}, 
-            icon: Icon(Icons.more_vert)
-            ), 
-          ],
+              //appbar icon. hamberge
 
-          flexibleSpace: Image.asset("assets/back.jpeg",fit: BoxFit.cover,)//appbar icon. hamberge
+            actions: [ //widget array
+              IconButton(
+              onPressed: (){}, 
+              icon: Icon(Icons.search)
+              ),
+            
+              IconButton(
+              onPressed: (){}, 
+              icon: Icon(Icons.more_vert)
+              ), 
+            ],
+    
+            // flexibleSpace: 
+            // Image.asset("assets/back.jpeg",
+            // fit: BoxFit.cover,
+            // ),
+    
+            bottom: const TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.directions_car),text: "Tab 1",),
+              Tab(icon: Icon(Icons.directions_transit)),
+              Tab(icon: Icon(Icons.directions_bike)),
+            ],
+          ),
+            elevation: 22.0, //tabbar shadow
+            backgroundColor: Colors.green, //tabbar backg color
+        ),
+
+          body: TabBarView(
+            children: [
+              tab1(),
+              Icon(Icons.directions_transit),
+              Icon(Icons.directions_bike),
+            ],
+          ),
+        // Doc - https://api.flutter.dev/flutter/material/AppBar-class.html
       ),
-      // Doc - https://api.flutter.dev/flutter/material/AppBar-class.html
-    );
+    );  
   }
+}
+
+
+
+Widget tab1(){
+    return Container(
+      child: Center(
+        child: Text("Tab 1"),
+      ),
+    );      
 }
