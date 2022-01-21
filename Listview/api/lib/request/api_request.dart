@@ -14,7 +14,7 @@ class ApiRequest{
 
   Dio _dio() {
     return Dio(BaseOptions(headers: {
-      'Authorization' : 'B'
+      'Authorization' : 'as'
     }));
   }
 
