@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: const SizedBox(
                     width: 300,
                     height: 100,
-                    child: Text('A card that can be tapped'),
+                    child: Text('Text'),
                   ),
                 ),
               ),
