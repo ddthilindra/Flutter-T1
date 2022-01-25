@@ -42,8 +42,9 @@ class _LoginState extends State<Login> {
                     RaisedButton(
                       color: Colors.black,
                       textColor: Colors.white,
-                      onPressed: (){},
-                    child: Text("Login"),),
+                      onPressed: () {},
+                      child: Text("Login"),
+                    ),
                     Text("Or login with")
                   ],
                 ),
